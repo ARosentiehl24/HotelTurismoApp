@@ -35,6 +35,8 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        Util.setImmersiveMode(this);
+
         ParallaxImageView parallaxImageView = (ParallaxImageView) findViewById(R.id.background);
         assert parallaxImageView != null;
         parallaxImageView.setImageBitmap(NativeStackBlur.process(BitmapFactory.decodeResource(getResources(), R.drawable.ic_fondo_d), 25));

@@ -32,6 +32,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        Util.setImmersiveMode(this);
+
         ParallaxImageView parallaxImageView = (ParallaxImageView) findViewById(R.id.background);
         assert parallaxImageView != null;
         parallaxImageView.setImageBitmap(NativeStackBlur.process(BitmapFactory.decodeResource(getResources(), R.drawable.ic_fondo_b), 25));
