@@ -3,14 +3,18 @@ package com.innovationtechnology.app.hotelturismoapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.commit451.nativestackblur.NativeStackBlur;
+import com.nvanbenschoten.motion.ParallaxImageView;
+import com.roger.missview.library.MissView;
 
 import static com.innovationtechnology.app.hotelturismoapp.Constants.CONSTRASEÑA;
 import static com.innovationtechnology.app.hotelturismoapp.Constants.NOMBRE;
@@ -19,6 +23,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private EditText nombre;
     private EditText contraseña;
+    private MissView mMissview;
     private SharedPreferences preferences;
     private SharedPreferencesUtil preferencesUtil;
 
@@ -27,8 +32,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        ParallaxImageView parallaxImageView = (ParallaxImageView) findViewById(R.id.background);
+        assert parallaxImageView != null;
+        parallaxImageView.setImageBitmap(NativeStackBlur.process(BitmapFactory.decodeResource(getResources(), R.drawable.ic_fondo_b), 25));
 
         preferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
         preferencesUtil = new SharedPreferencesUtil(this);

@@ -2,16 +2,23 @@ package com.innovationtechnology.app.hotelturismoapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static com.innovationtechnology.app.hotelturismoapp.Constants.*;
+import com.commit451.nativestackblur.NativeStackBlur;
+import com.nvanbenschoten.motion.ParallaxImageView;
+
+import static com.innovationtechnology.app.hotelturismoapp.Constants.CONSTRASEÑA;
+import static com.innovationtechnology.app.hotelturismoapp.Constants.EMAIL;
+import static com.innovationtechnology.app.hotelturismoapp.Constants.NOMBRE;
+import static com.innovationtechnology.app.hotelturismoapp.Constants.NOMBRE_USUARIO;
+import static com.innovationtechnology.app.hotelturismoapp.Constants.TELEFONO;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -28,8 +35,9 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        ParallaxImageView parallaxImageView = (ParallaxImageView) findViewById(R.id.background);
+        assert parallaxImageView != null;
+        parallaxImageView.setImageBitmap(NativeStackBlur.process(BitmapFactory.decodeResource(getResources(), R.drawable.ic_fondo_d), 25));
 
         nombre = (EditText) findViewById(R.id.nombre);
         contraseña = (EditText) findViewById(R.id.contraseña);
@@ -40,9 +48,9 @@ public class SignInActivity extends AppCompatActivity {
         preferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
         preferencesUtil = new SharedPreferencesUtil(this);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        assert fab != null;
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button registrar = (Button) findViewById(R.id.registrar);
+        assert registrar != null;
+        registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isEmpty(nombre) || isEmpty(contraseña) || isEmpty(nombreUsuario) || isEmpty(telefono) || isEmpty(email)) {

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HotelTurismoApp</string>
+    <string name="app_name">Hotel y Turismo App</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_sign_in">Sign In</string>
     <string name="title_activity_main">Main</string>
