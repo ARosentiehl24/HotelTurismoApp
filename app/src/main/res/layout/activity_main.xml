@@ -27,7 +27,7 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?actionBarSize"
             app:cardBackgroundColor="@color/glass25"
             app:cardCornerRadius="0dp"
             app:cardElevation="0.5dp">
@@ -45,23 +45,20 @@
                 android:textColor="@color/background_light" />
         </android.support.v7.widget.CardView>
 
-        <Button
-            android:id="@+id/hospedar"
+        <com.gigamole.library.NavigationTabStrip
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/selector_brackground_two"
-            android:text="¡Quiero Hospedarme!"
-            android:textColor="@color/background_light" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/selector_brackground_two"
-            android:text="¡Quiero Pasear!"
-            android:textColor="@color/background_light" />
+            android:layout_height="50dp"
+            app:nts_active_color="#000"
+            app:nts_animation_duration="300"
+            app:nts_color="#000"
+            app:nts_corners_radius="1.5dp"
+            app:nts_factor="2.5"
+            app:nts_gravity="top"
+            app:nts_inactive_color="#c4c4c4"
+            app:nts_size="15sp"
+            app:nts_titles="@array/opciones"
+            app:nts_type="point"
+            app:nts_typeface="fonts/typeface.otf"
+            app:nts_weight="3dp" />
     </LinearLayout>
 </RelativeLayout>

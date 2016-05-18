@@ -35,6 +35,7 @@ dependencies {
     compile 'com.google.android.gms:play-services:9.0.0'
     compile 'com.afollestad:inquiry:2.0.1'
     compile 'com.commit451:NativeStackBlur:1.0.2'
+    compile 'com.github.devlight.navigationtabstrip:library:1.0.1'
     compile 'com.nvanbenschoten.motion:library:1.1.2'
     compile 'com.roger.missview.library:library:1.0.0'
 }
